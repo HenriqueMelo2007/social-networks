@@ -1,0 +1,129 @@
+/* FORMATAÇÃO DA PÁGINA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIÁVEIS */
+:root {
+  --background-gradient: radial-gradient(circle, rgb(68, 4, 170) 0%, rgba(0,0,0,1) 100%);
+  --filter-saturate-box: saturate(115%);
+  --box-color: rgb(78, 8, 189);
+  --color-one: rgb(255, 255, 255);
+  --color-two: rgb(0, 0, 0);
+}
+
+/* CENTRALIZAÇÃO, BACKGROUND E FONTE DA PÁGINA */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  background: var(--background-gradient);
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ESTILIZAÇÃO DA CAIXA COM O CONTEÚDO */
+.box {
+  height: 28rem;
+  width: 26rem;
+  backdrop-filter: var(--filter-saturate-box);
+  box-shadow: 0.7px 0.7px 25px 2px var(--color-two);
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* AVATAR */
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-image {
+  max-width: 90px;
+  max-height: 90px;
+  clip-path: circle(50% at 50% 50%);
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  color: var(--color-two);
+}
+
+/* LINKS */
+.link-box {
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--color-two);
+  color: var(--color-one);
+  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  transition: 0.5s;
+}
+
+.icon {
+  max-width: 1rem;
+  max-height: 1rem;
+  margin-right: 0.4rem;
+}
+
+/* ANIMAÇÃO DOS BOTÕES */
+a:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0.7px 0.7px 25px 2px var(--color-two);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 425px) {
+  .box {
+    height: 24.5rem;
+    width: 23rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 90%;
+  }
+
+  .box {
+    height: 23rem;
+    width: 21rem;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 85%;
+  }
+
+  .box {
+    height: 22.5rem;
+    width: 19rem;
+    gap: 3rem;
+  }
+}
